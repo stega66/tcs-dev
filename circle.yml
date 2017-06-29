@@ -1,10 +1,10 @@
-  machine:
-    php:
+machine:
+  php:
     version: 5.5.11
-
-  test:
-    pre: 
+ 
+test:
+  pre:
     - mv behat.local.yml.sample behat.local.yml
-    override:
+  override:
     - mkdir $CIRCLE_TEST_REPORTS/behat
     - ./bin/behat --format junit --out $CIRCLE_TEST_REPORTS/behat --tags=smoke
